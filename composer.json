@@ -1,0 +1,57 @@
+{
+    "name": "metadeck/eloquent-schema-org",
+    "description": "Attach schema.org data to eloquent models",
+    "keywords": [
+        "metadeck",
+        "laravel",
+        "eloquent",
+        "schema"
+    ],
+    "homepage": "https://github.com/metadeck/eloquent-schema-org",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Declan McDonough",
+            "email": "declan@metadeck.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "illuminate/support": "^6.0",
+        "spatie/schema-org": "^2.3"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Metadeck\\EloquentSchemaOrg\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Metadeck\\EloquentSchemaOrg\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Metadeck\\EloquentSchemaOrg\\EloquentSchemaOrgServiceProvider"
+            ],
+            "aliases": {
+                "EloquentJsonLd": "Metadeck\\EloquentSchemaOrg\\EloquentSchemaOrgFacade"
+            }
+        }
+    }
+}
